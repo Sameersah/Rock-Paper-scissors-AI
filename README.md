@@ -14,7 +14,7 @@ This is an AI-powered Rock-Paper-Scissors game that uses **Machine Learning (ML)
 
 ##  Project Structure
 ```
-RPS-ML-Warrior/
+Rock-Paper-ScissorsAI/
 │── src/              # Source files (C++ implementations)
 │   │── main.cpp       # Main game loop
 │   │── Game.cpp       # Implementation of Game class
@@ -76,4 +76,4 @@ Pull requests are welcome! Please follow best practices and provide clear commit
 This project is licensed under the MIT License.
 
 ##  Contact
-For questions or suggestions, reach out via GitHub Issues or email- sameersah7365@gmail.com
+For questions or suggestions, reach out via GitHub Issues or email.
