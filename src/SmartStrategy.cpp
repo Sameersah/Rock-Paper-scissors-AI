@@ -13,7 +13,7 @@ std::string SmartStrategy::historyToString(const std::vector<Choice>& history) c
     if (history.size() < N) return "";
     std::string s;
     for (size_t i = history.size() - N; i < history.size(); ++i)
-        s += std::to_string(static_cast<int>(history[i]));
+        s += std::to_string(history[i]);
     return s;
 }
 
