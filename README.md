@@ -12,29 +12,7 @@ This is an AI-powered Rock-Paper-Scissors game that uses **Machine Learning (ML)
 - **Command-line Interface (CLI) Game Engine**.
 - **Clean Code & Best Practices:** Follows SOLID principles and well-structured project organization.
 
-##  Project Structure
-```
-Rock-Paper-ScissorsAI/
-│── src/              # Source files (C++ implementations)
-│   │── main.cpp       # Main game loop
-│   │── Game.cpp       # Implementation of Game class
-│   │── Strategy.cpp   # Implementation of Strategy base class
-│   │── RandomStrategy.cpp # Implementation of Random Strategy
-│   │── SmartStrategy.cpp  # Implementation of Smart Strategy
-│── include/          # Header files (C++ declarations)
-│   │── Game.h        # Declaration of Game class
-│   │── Strategy.h    # Declaration of Strategy base class
-│   │── RandomStrategy.h # Declaration of Random Strategy
-│   │── SmartStrategy.h  # Declaration of Smart Strategy
-│── bin/              # Compiled binaries
-│── data/             # Storage for frequency files
-│   │── strategy_data.txt  # Smart strategy persistent data
-│── tests/            # Unit tests
-│   │── testGame.cpp       # Unit tests for Game class
-│   │── testStrategy.cpp   # Unit tests for strategy classes
-│── README.md         # Documentation
-│── CMakeLists.txt    # CMake build configuration
-```
+
 
 ## ️ Installation & Setup
 ```sh
