@@ -9,7 +9,7 @@
 SmartStrategy::SmartStrategy() { loadFrequencies(); }
 SmartStrategy::~SmartStrategy() { saveFrequencies(); }
 
-std::string SmartStrategy::historyToString(const std::vector<Choice>& history) {
+std::string SmartStrategy::historyToString(const std::vector<Choice>& history) const {
     if (history.size() < N) return "";
     std::string s;
     for (size_t i = history.size() - N; i < history.size(); ++i)
@@ -28,7 +28,7 @@ void SmartStrategy::loadFrequencies() {
     inFile.close();
 }
 
-void SmartStrategy::saveFrequencies() {
+void SmartStrategy::saveFrequencies() const {
     std::ofstream outFile("strategy_data.txt");
     for (const auto& pair : frequencyMap) {
         outFile << pair.first << " " << pair.second.at(Choice::ROCK) << " "

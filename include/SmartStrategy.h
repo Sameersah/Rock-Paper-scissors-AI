@@ -13,9 +13,9 @@ class SmartStrategy : public Strategy {
 private:
     std::map<std::string, std::map<Choice, int>> frequencyMap;
     const int N = 5;
-    std::string historyToString(const std::vector<Choice>& history);
+    std::string historyToString(const std::vector<Choice>& history) const;
     void loadFrequencies();
-    void saveFrequencies();
+    void saveFrequencies() const;
 public:
     SmartStrategy();
     ~SmartStrategy();

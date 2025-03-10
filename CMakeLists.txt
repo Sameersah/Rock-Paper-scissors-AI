@@ -8,7 +8,7 @@ add_executable(RockPaperScissorsAI src/main.cpp
         src/main.cpp
         src/RandomStrategy.cpp
         src/SmartStrategy.cpp
-        src/Strategy.cpp)
+)
 
 
 # Include directories
