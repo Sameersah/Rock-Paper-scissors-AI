@@ -9,16 +9,16 @@
 #include <map>
 #include <string>
 
-class SmartStrategy : public Strategy {
+class SmartStrategy final : public Strategy {
 private:
     std::map<std::string, std::map<Choice, int>> frequencyMap;
     const int N = 5;
-    std::string historyToString(const std::vector<Choice>& history) const;
+    [[nodiscard]] std::string historyToString(const std::vector<Choice>& history) const;
     void loadFrequencies();
     void saveFrequencies() const;
 public:
     SmartStrategy();
-    ~SmartStrategy();
+    ~SmartStrategy() override;
     Choice getChoice(const std::vector<Choice>& history) override;
     void updateHistory(const std::vector<Choice>& history);
 };
