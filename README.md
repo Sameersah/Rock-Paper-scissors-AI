@@ -39,10 +39,10 @@ Rock-Paper-ScissorsAI/
 ## ️ Installation & Setup
 ```sh
 # Clone the repository
-$ git clone https://github.com/yourusername/RPS-ML-Warrior.git
+$ git clone https://github.com/yourusername/Rock-Paper-Scissiors-AI.git
 
 # Navigate to project directory
-$ cd RPS-ML-Warrior
+$ cdRock-Paper-Scissiors-AI
 
 # Compile the project (if using g++)
 $ g++ -std=c++11 src/*.cpp -o bin/game
