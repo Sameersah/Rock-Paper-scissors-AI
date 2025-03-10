@@ -1,12 +1,8 @@
-//
-// Created by Sameer on 10/03/25.
-//
-
 #ifndef STRATEGY_H
 #define STRATEGY_H
 
 #include <vector>
-#include "Choice.h"
+#include "Choice.h"  // Ensure Choice is known before usage
 
 class Strategy {
 public:
@@ -14,4 +10,4 @@ public:
     virtual ~Strategy() {}
 };
 
-#endif //STRATEGY_H
+#endif // STRATEGY_H
