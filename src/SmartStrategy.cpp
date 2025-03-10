@@ -5,6 +5,7 @@
 #include "SmartStrategy.h"
 #include <fstream>
 #include <algorithm>
+#include <iostream>
 
 SmartStrategy::SmartStrategy() { loadFrequencies(); }
 SmartStrategy::~SmartStrategy() { saveFrequencies(); }
@@ -18,7 +19,7 @@ std::string SmartStrategy::historyToString(const std::vector<Choice>& history) c
 }
 
 void SmartStrategy::loadFrequencies() {
-    std::ifstream inFile("strategy_data.txt");
+    std::ifstream inFile("data/strategy_data.txt");
     if (!inFile) return;
     std::string seq;
     int r, p, s;
@@ -29,7 +30,8 @@ void SmartStrategy::loadFrequencies() {
 }
 
 void SmartStrategy::saveFrequencies() const {
-    std::ofstream outFile("strategy_data.txt");
+    std::cout << "Saving frequencies..." << std::endl;
+    std::ofstream outFile("data/strategy_data.txt");
     for (const auto& pair : frequencyMap) {
         outFile << pair.first << " " << pair.second.at(Choice::ROCK) << " "
                 << pair.second.at(Choice::PAPER) << " " << pair.second.at(Choice::SCISSORS) << std::endl;
