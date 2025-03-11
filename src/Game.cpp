@@ -40,12 +40,13 @@ void Game::determineWinner(Choice human, Choice computer) {
 }
 
 void Game::playGame() {
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 6; i++) {
         Choice humanChoice = getHumanChoice();
         Choice computerChoice = strategy->getChoice(history);
         history.push_back(humanChoice);
         std::cout << "Computer chose: " << (computerChoice == Choice::ROCK ? "Rock" : computerChoice == Choice::PAPER ? "Paper" : "Scissors") << std::endl;
         determineWinner(humanChoice, computerChoice);
+        strategy->updateHistory(history);
     }
     std::cout << "Final Score - You: " << humanScore << " | Computer: " << computerScore << std::endl;
 }

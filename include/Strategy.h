@@ -7,6 +7,7 @@
 class Strategy {
 public:
     virtual Choice getChoice(const std::vector<Choice>& history) = 0;
+    virtual void updateHistory(const std::vector<Choice>& history) = 0;
     virtual ~Strategy() = default;
 };
 

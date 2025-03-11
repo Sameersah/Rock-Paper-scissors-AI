@@ -11,3 +11,5 @@ Choice RandomStrategy::getChoice(const std::vector<Choice>& history) {
     int randChoice = rand() % 3;
     return static_cast<Choice>(randChoice);
 }
+
+

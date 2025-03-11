@@ -11,6 +11,7 @@
 class RandomStrategy : public Strategy {
 public:
     Choice getChoice(const std::vector<Choice>& history) override;
+    void updateHistory(const std::vector<Choice>& history) override {}
 };
 
 #endif //RANDOMSTRATEGY_H

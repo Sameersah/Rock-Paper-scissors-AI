@@ -20,7 +20,7 @@ public:
     SmartStrategy();
     ~SmartStrategy() override;
     Choice getChoice(const std::vector<Choice>& history) override;
-    void updateHistory(const std::vector<Choice>& history);
+    void updateHistory(const std::vector<Choice>& history) override;
 };
 
 #endif // SMART_STRATEGY_H
