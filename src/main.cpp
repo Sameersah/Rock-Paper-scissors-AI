@@ -1,8 +1,9 @@
+// main.cpp
 #include <iostream>
 #include <memory>
 #include "Game.h"
-#include "RandomStrategy.h"
-#include "SmartStrategy.h"
+#include "RandomStrategyFactory.h"
+#include "SmartStrategyFactory.h"
 
 int main() {
     srand(time(0));
@@ -11,15 +12,16 @@ int main() {
     int choice;
     std::cin >> choice;
 
-    std::unique_ptr<Strategy> strategy;
+    std::unique_ptr<StrategyFactory> factory;
     if (choice == 2) {
-        strategy = std::make_unique<SmartStrategy>();
+        factory = std::make_unique<SmartStrategyFactory>();
     } else {
-        strategy = std::make_unique<RandomStrategy>();
+        factory = std::make_unique<RandomStrategyFactory>();
     }
 
+    std::unique_ptr<Strategy> strategy = factory->createStrategy();
     Game game(strategy.get());
     game.playGame();
 
-    return 0;  // Destructor will be called automatically, saving data
+    return 0;
 }
