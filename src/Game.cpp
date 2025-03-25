@@ -28,6 +28,7 @@ Choice Game::getHumanChoice() {
 void Game::determineWinner(Choice human, Choice computer) {
     if (human == computer) {
         std::cout << "It's a tie!" << std::endl;
+        tie++;
     } else if ((human == Choice::ROCK && computer == Choice::SCISSORS) ||
                (human == Choice::PAPER && computer == Choice::ROCK) ||
                (human == Choice::SCISSORS && computer == Choice::PAPER)) {
@@ -40,7 +41,7 @@ void Game::determineWinner(Choice human, Choice computer) {
 }
 
 void Game::playGame() {
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 20; i++) {
         Choice humanChoice = getHumanChoice();
         Choice computerChoice = strategy->getChoice(history);
         history.push_back(humanChoice);
@@ -48,5 +49,6 @@ void Game::playGame() {
         determineWinner(humanChoice, computerChoice);
         strategy->updateHistory(history);
     }
-    std::cout << "Final Score - You: " << humanScore << " | Computer: " << computerScore << std::endl;
+    std::cout << "Final Score - You: " << humanScore << " | Computer: " << computerScore
+    <<" | Tie: " << tie  <<std::endl;
 }

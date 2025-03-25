@@ -13,7 +13,7 @@ class Game {
 private:
     Strategy* strategy;
     std::vector<Choice> history;
-    int humanScore = 0, computerScore = 0;
+    int humanScore = 0, computerScore = 0, tie = 0;
     Choice getHumanChoice();
     void determineWinner(Choice human, Choice computer);
 public:
