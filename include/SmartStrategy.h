@@ -12,7 +12,7 @@
 class SmartStrategy final : public Strategy {
 private:
     std::map<std::string, std::map<Choice, int>> frequencyMap;
-    const int N = 5;
+    const int N = 6;
     [[nodiscard]] std::string historyToString(const std::vector<Choice>& history) const;
     void loadFrequencies();
     void saveFrequencies() const;

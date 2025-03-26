@@ -71,14 +71,15 @@ Choice SmartStrategy::getChoice(const std::vector<Choice>& history) {
     //std::cout << "Getting choice..." << std::endl;
     std::string seq = historyToString(history);
     //std::cout << "Sequence: " << seq << std::endl;
+    seq = seq.substr(0, 5);
     if (seq.empty() || frequencyMap.find(seq) == frequencyMap.end()) {
         return static_cast<Choice>(rand() % 3);
     }
     auto &freq = frequencyMap[seq];
     Choice predicted = std::max_element(freq.begin(), freq.end(),
         [](const auto& a, const auto& b) { return a.second < b.second; })->first;
-
-  //  std::cout << predicted << " predicted based on frequency." << std::endl;
+    
+    //  std::cout << predicted << " predicted based on frequency." << std::endl;
     Choice response =  (predicted == Choice::ROCK) ? Choice::PAPER :
            (predicted == Choice::PAPER) ? Choice::SCISSORS : Choice::ROCK;
   //  std::cout << "Response: " << response << std::endl;
@@ -87,10 +88,14 @@ Choice SmartStrategy::getChoice(const std::vector<Choice>& history) {
 
 void SmartStrategy::updateHistory(const std::vector<Choice>& history) {
     std::string seq = historyToString(history);
+    // std::cout<< "check1: " << seq<<" "<<seq.size() << std::endl;
+    // std::cout << "check2: " << static_cast<Choice>((history.back())) << std::endl;
+    seq = seq.substr(0, 5);
+    // std::cout << "Updating history... "<< seq<< std::endl;
     if (!seq.empty()) {
         if (frequencyMap.find(seq) == frequencyMap.end()) {
             frequencyMap[seq] = {{Choice::ROCK, 0}, {Choice::PAPER, 0}, {Choice::SCISSORS, 0}};
         }
-        frequencyMap[seq][static_cast<Choice>((history.back() + 1) % 3)]++;
+        frequencyMap[seq][static_cast<Choice>((history.back()))]++;
     }
 }
